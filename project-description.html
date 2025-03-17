@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkTrainer - AI-Powered Thinking Skills Platform</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: rgba(67, 97, 238, 0.1);
+            --secondary: #06d6a0;
+            --dark: #2b2d42;
+            --gray: #8d99ae;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #3f37c9);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-badge {
+            background: white;
+            border: 1px solid var(--gray);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .screenshot {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .architecture-diagram {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .highlight {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .section {
+            margin: 3rem 0;
+        }
+        
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ThinkTrainer</h1>
+            <p>An AI-powered web application to teach and improve thinking skills</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Project Overview</h2>
+            <p>
+                ThinkTrainer is a comprehensive web application designed to help users develop and enhance various thinking skills through 
+                interactive exercises, guided practice, and AI-powered feedback. The platform provides personalized training paths, 
+                tracks progress over time, and offers insights to help users become more effective thinkers.
+            </p>
+            
+            <div class="note">
+                <strong>Project Goal:</strong> Create a platform that makes developing critical thinking, creative thinking, 
+                analytical thinking, and strategic thinking accessible to everyone through personalized, AI-guided practice.
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Key Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Thinking Skills Assessment</h3>
+                    <p>Evaluate and track progress across different thinking styles including critical, creative, strategic, and analytical thinking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Coaching</h3>
+                    <p>Leverages OpenAI's GPT models to generate personalized thinking exercises, evaluate user solutions, and provide targeted feedback.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Visual dashboards with charts showing skill development over time, activity patterns, and areas for improvement.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Problem Solver</h3>
+                    <p>Learn systematic thinking approaches for real-world problems with step-by-step guidance from the AI.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Achievement System</h3>
+                    <p>Gamified learning with unlockable achievements to keep users motivated on their thinking development journey.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Thinking Process Analysis</h3>
+                    <p>Tools to evaluate, reverse-engineer, and verify thinking processes to improve metacognitive abilities.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Technology Stack</h2>
+            <p>ThinkTrainer is built with a modern JavaScript/TypeScript stack:</p>
+            
+            <h3>Frontend</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">TailwindCSS</span>
+                <span class="tech-badge">shadcn/ui</span>
+                <span class="tech-badge">Chart.js</span>
+                <span class="tech-badge">React Query</span>
+                <span class="tech-badge">Wouter (routing)</span>
+            </div>
+            
+            <h3>Backend</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">OpenAI API</span>
+                <span class="tech-badge">Drizzle ORM</span>
+                <span class="tech-badge">Zod (validation)</span>
+            </div>
+            
+            <h3>Development Tools</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Vite</span>
+                <span class="tech-badge">npm</span>
+                <span class="tech-badge">Replit</span>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Architecture Overview</h2>
+            
+            <div class="architecture-diagram">
+                <h3>Application Structure</h3>
+                <ul>
+                    <li><strong>Client</strong>: React frontend with TailwindCSS for styling and shadcn components</li>
+                    <li><strong>Server</strong>: Express API with endpoints for data management and OpenAI integration</li>
+                    <li><strong>Shared</strong>: Common types and schemas shared between client and server</li>
+                    <li><strong>Storage</strong>: In-memory data store with option to migrate to PostgreSQL</li>
+                </ul>
+                
+                <h3>Data Flow</h3>
+                <p>
+                    The application follows a standard client-server architecture with React Query for data fetching and state management.
+                    User actions trigger API requests to the backend, which then interacts with the storage layer or external services (OpenAI API).
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Key Components</h2>
+            
+            <h3>Dashboard</h3>
+            <p>
+                The central hub that displays personalized insights through visualizations like the skills radar chart, 
+                weekly activity trends, and recommended exercises. Shows a quick overview of the user's thinking skill development.
+            </p>
+            
+            <h3>Training Module</h3>
+            <p>
+                Provides structured exercises categorized by thinking type. Users can generate new AI-created exercises 
+                tailored to their specific thinking skills and current proficiency level.
+            </p>
+            
+            <h3>Problem Solver</h3>
+            <p>
+                Allows users to input real-world problems they're facing and receive a step-by-step breakdown of the thinking
+                process needed to solve them. This helps users see how effective thinking is applied to practical situations.
+            </p>
+            
+            <h3>Analytics</h3>
+            <p>
+                Detailed charts and metrics showing progress, time spent, accuracy scores, and skill development over time.
+                Helps users understand their strengths and areas for improvement.
+            </p>
+            
+            <h3>Achievements</h3>
+            <p>
+                A collection of unlockable badges and rewards that users can earn as they develop their thinking skills and
+                complete various challenges on the platform.
+            </p>
+            
+            <h3>Thinking Process Tools</h3>
+            <p>
+                Advanced tools for evaluating thinking quality, reverse-engineering solutions, and verifying logical connections
+                between problems and solutions. Helps users develop metacognitive abilities.
+            </p>
+        </section>
+        
+        <section class="section">
+            <h2>OpenAI Integration</h2>
+            <p>
+                ThinkTrainer leverages OpenAI's GPT models through several specialized functions:
+            </p>
+            
+            <ul>
+                <li><strong>generateThinkingProcess</strong>: Creates step-by-step thought processes for solving problems</li>
+                <li><strong>evaluateThinkingProcess</strong>: Analyzes and scores user thinking with detailed feedback</li>
+                <li><strong>generateExercise</strong>: Creates custom exercises tailored to specific thinking types</li>
+                <li><strong>reverseEngineerThinking</strong>: Reconstructs the thinking needed to arrive at a given solution</li>
+                <li><strong>verifyThinkingProcess</strong>: Validates whether a thinking process logically connects to its conclusion</li>
+            </ul>
+            
+            <div class="note">
+                <strong>Note:</strong> The application requires a valid OpenAI API key to enable these AI-powered features.
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Data Model</h2>
+            <p>
+                ThinkTrainer uses a structured data model to track user progress and manage the application:
+            </p>
+            
+            <ul>
+                <li><strong>Users</strong>: User profiles with authentication information and progress level</li>
+                <li><strong>ThinkingSkills</strong>: The four core thinking types with descriptions and visual attributes</li>
+                <li><strong>UserSkills</strong>: Tracks each user's progress in each thinking skill</li>
+                <li><strong>Exercises</strong>: Training activities categorized by skill type and difficulty</li>
+                <li><strong>UserActivities</strong>: Record of all user interactions with the platform</li>
+                <li><strong>UserProblems</strong>: Problems submitted by users with their generated thinking processes</li>
+                <li><strong>Achievements</strong>: Unlockable rewards for skill development and platform usage</li>
+                <li><strong>WeeklyActivity</strong>: Time-based tracking of platform engagement</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Future Development Plans</h2>
+            
+            <h3>Phase 1: Core Platform (Current)</h3>
+            <ul>
+                <li>Dashboard with skills visualization</li>
+                <li>Basic training exercises</li>
+                <li>Problem solver with AI-generated thinking processes</li>
+                <li>Achievement system and analytics</li>
+            </ul>
+            
+            <h3>Phase 2: Enhanced Features</h3>
+            <ul>
+                <li>Community sharing of thinking challenges</li>
+                <li>Expanded exercise library with categorization</li>
+                <li>Integration with educational curricula</li>
+                <li>Advanced AI coaching with personalized paths</li>
+            </ul>
+            
+            <h3>Phase 3: Enterprise & Education</h3>
+            <ul>
+                <li>Team collaboration features for organizations</li>
+                <li>Classroom management for educators</li>
+                <li>Domain-specific thinking exercises (business, STEM, humanities)</li>
+                <li>Integration with learning management systems</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>ThinkTrainer - Develop better thinking skills through AI-guided practice</p>
+            <p>Created with React, Node.js, and OpenAI</p>
+        </div>
+    </footer>
+</body>
+</html>

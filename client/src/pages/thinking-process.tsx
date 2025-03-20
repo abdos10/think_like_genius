@@ -124,7 +124,7 @@ export default function ThinkingProcess() {
     if (!evaluateForm.description || !evaluateForm.thinkingProcess || !evaluateForm.expectedOutcome) {
       toast({
         title: "Missing Information",
-        description: "Please fill out all fields to evaluate your thinking process.",
+        description: "Please fill out all fields to evaluate your Idea Journey.",
         variant: "destructive"
       });
       return;
@@ -153,14 +153,14 @@ export default function ThinkingProcess() {
       setEvaluationResult(result);
       toast({
         title: "Evaluation Complete",
-        description: `Your thinking process scored ${result.score}/100.`
+        description: `Your Idea Journey scored ${result.score}/100.`
       });
       // Refresh history
       fetchHistory("evaluate");
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to evaluate thinking process. Please try again.",
+        description: "Failed to evaluate Idea Journey . Please try again.",
         variant: "destructive"
       });
     } finally {
@@ -173,7 +173,7 @@ export default function ThinkingProcess() {
     if (!reverseForm.problem) {
       toast({
         title: "Missing Information",
-        description: "Please provide a problem description to reverse-engineer the thinking process.",
+        description: "Please provide a problem description to reverse-engineer the Idea Journey .",
         variant: "destructive"
       });
       return;
@@ -202,14 +202,14 @@ export default function ThinkingProcess() {
       setReverseResult(result);
       toast({
         title: "Analysis Complete",
-        description: "The thinking process has been reverse-engineered."
+        description: "The Idea Journey has been generated."
       });
       // Refresh history
       fetchHistory("reverse");
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to reverse-engineer thinking process. Please try again.",
+        description: "Failed to generate Idea Journey . Please try again.",
         variant: "destructive"
       });
     } finally {
@@ -222,7 +222,7 @@ export default function ThinkingProcess() {
     if (!verifyForm.problem || !verifyForm.thinkingProcess || !verifyForm.conclusion) {
       toast({
         title: "Missing Information",
-        description: "Please fill out all fields to verify your thinking process.",
+        description: "Please fill out all fields to verify your Idea Journey .",
         variant: "destructive"
       });
       return;
@@ -236,15 +236,15 @@ export default function ThinkingProcess() {
       toast({
         title: "Verification Complete",
         description: result.isValid 
-          ? "Your thinking process is valid." 
-          : "Your thinking process has some logical gaps."
+          ? "Your Idea Journey  is valid." 
+          : "Your Idea Journey  has some logical gaps."
       });
       // Refresh history
       fetchHistory("verify");
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to verify thinking process. Please try again.",
+        description: "Failed to verify Idea Journey . Please try again.",
         variant: "destructive"
       });
     } finally {
@@ -293,9 +293,9 @@ export default function ThinkingProcess() {
   return (
     <div className="p-4 md:p-6">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold font-heading mb-2">Thinking Process</h2>
+        <h2 className="text-2xl font-bold font-heading mb-2">Idea Journey </h2>
         <p className="text-gray-600">
-          Evaluate, reverse-engineer, and verify thinking processes to build your skills.
+          Evaluate, reverse-engineer, and verify Idea Journey to build your mental skills.
         </p>
       </div>
       
@@ -317,7 +317,7 @@ export default function ThinkingProcess() {
             value="reverse" 
             className="data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all"
           >
-            Reverse Engineer
+            idea Journey
           </TabsTrigger>
         </TabsList>
         
@@ -327,7 +327,7 @@ export default function ThinkingProcess() {
             {/* Input Form */}
             <Card className="lg:col-span-2">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-4">Evaluate Thinking Process</h3>
+                <h3 className="text-lg font-bold mb-4">Evaluate Idea Journey </h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Problem Type</label>
@@ -373,10 +373,10 @@ export default function ThinkingProcess() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Your Thinking Process</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Your Idea Journey </label>
                     <Textarea 
                       name="thinkingProcess"
-                      placeholder="Explain your step-by-step thinking process..."
+                      placeholder="Explain your step-by-step Idea Journey ..."
                       className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-gray-50 p-2.5"
                       rows={5}
                       value={evaluateForm.thinkingProcess}
@@ -536,7 +536,7 @@ export default function ThinkingProcess() {
             {/* Input Form */}
             <Card className="lg:col-span-2">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-4">Verify Thinking Process</h3>
+                <h3 className="text-lg font-bold mb-4">Verify Idea Journey </h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Problem Statement</label>
@@ -551,10 +551,10 @@ export default function ThinkingProcess() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Thinking Process</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Idea Journey </label>
                     <Textarea 
                       name="thinkingProcess"
-                      placeholder="Describe your thinking process steps..."
+                      placeholder="Describe your Idea Journey steps..."
                       className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-gray-50 p-2.5"
                       rows={5}
                       value={verifyForm.thinkingProcess}
@@ -585,7 +585,7 @@ export default function ThinkingProcess() {
                         Verifying...
                       </>
                     ) : (
-                      "Verify Thinking Process"
+                      "Verify Idea Journey "
                     )}
                   </Button>
                 </div>
@@ -688,7 +688,7 @@ export default function ThinkingProcess() {
             {/* Input Form */}
             <Card className="lg:col-span-2">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-4">Reverse Engineer Thinking</h3>
+                <h3 className="text-lg font-bold mb-4">Generate Idea Journey </h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Problem Type</label>
@@ -758,7 +758,7 @@ export default function ThinkingProcess() {
                         Analyzing...
                       </>
                     ) : (
-                      "Generate Thinking Process"
+                      "Generate Idea Journey "
                     )}
                   </Button>
                 </div>
@@ -768,7 +768,7 @@ export default function ThinkingProcess() {
             {/* History */}
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-4">Reverse Engineering History</h3>
+                <h3 className="text-lg font-bold mb-4">Idea Journey History</h3>
                 
                 <div className="space-y-2">
                   {reverseHistory.length > 0 ? (
@@ -778,8 +778,8 @@ export default function ThinkingProcess() {
                   ) : (
                     <div className="text-center py-8 text-gray-500">
                       <i className="ri-history-line text-3xl mb-2 block"></i>
-                      <p>No reverse engineering history yet</p>
-                      <p className="text-sm mt-1">Complete a reverse engineering to see it here</p>
+                      <p>No Idea Journey history yet</p>
+                      <p className="text-sm mt-1">Complete a Idea Journey to see it here</p>
                     </div>
                   )}
                 </div>
@@ -790,11 +790,11 @@ export default function ThinkingProcess() {
             {reverseResult && (
               <Card className="lg:col-span-3">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-bold mb-4">Reverse Engineering Results</h3>
+                  <h3 className="text-lg font-bold mb-4">Idea Journey Results</h3>
                   
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-medium mb-3 text-primary">Thinking Process</h4>
+                      <h4 className="font-medium mb-3 text-primary">Idea Journey </h4>
                       <div className="space-y-3">
                         {reverseResult.process.map((step: any, index: number) => (
                           <div key={index} className="bg-gray-50 p-4 rounded-lg">

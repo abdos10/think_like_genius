@@ -45,7 +45,7 @@ export function ProblemForm({ userId }: ProblemFormProps) {
       
       toast({
         title: "Success",
-        description: "Your thinking process has been generated",
+        description: "Your Idea Journey has been generated",
       });
       
       // Reset form
@@ -113,7 +113,7 @@ export function ProblemForm({ userId }: ProblemFormProps) {
                     Generating...
                   </>
                 ) : (
-                  "Generate Thinking Process"
+                  "Generate Idea Journey"
                 )}
               </Button>
               <Button variant="outline">
@@ -135,7 +135,7 @@ export function ProblemForm({ userId }: ProblemFormProps) {
               </li>
               <li className="flex">
                 <span className="flex-shrink-0 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary w-6 h-6 mr-2">3</span>
-                <span>Get step-by-step thinking process</span>
+                <span>Get step-by-step Idea Journey</span>
               </li>
               <li className="flex">
                 <span className="flex-shrink-0 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary w-6 h-6 mr-2">4</span>

@@ -11,7 +11,7 @@ export function Sidebar({ user }: SidebarProps) {
 
   const navItems = [
     { href: "/", label: "Dashboard", icon: "ri-dashboard-line" },
-    { href: "/thinking-process", label: "Thinking Process", icon: "ri-lightbulb-line" },
+    { href: "/thinking-process", label: "Idea Journey", icon: "ri-lightbulb-line" },
     { href: "/training", label: "Training", icon: "ri-brain-line" },
     { href: "/analytics", label: "Analytics", icon: "ri-bar-chart-box-line" },
     { href: "/achievements", label: "Achievements", icon: "ri-medal-line" },

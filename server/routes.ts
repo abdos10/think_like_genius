@@ -368,7 +368,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await storage.createUserActivity({
         userId,
         activityType: "reverse_engineering",
-        title: `Reverse Engineered ${problemType}: ${problem.substring(0, 30)}...`,
+        title: `Idea Journey ${problemType}: ${problem.substring(0, 30)}...`,
         description: problem,
         score: null,
         skillId: null,

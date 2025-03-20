@@ -313,6 +313,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         expectedOutcome
       );
       
+      // Save the activity for history tracking
+      // For demo purposes, use user 1
+      const userId = 1;
+      
+      await storage.createUserActivity({
+        userId,
+        activityType: "thinking_evaluation",
+        title: `Evaluated ${problemType}: ${description.substring(0, 30)}...`,
+        description: description,
+        score: evaluation.score,
+        skillId: null,
+        exerciseId: null
+      });
+      
       res.json(evaluation);
     } catch (error) {
       res.status(400).json({ message: getErrorMessage(error) });
@@ -339,12 +353,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
   apiRouter.post("/reverse-engineer", async (req, res) => {
     try {
       const schema = z.object({
+        problemType: z.string(),
         problem: z.string(),
-        solution: z.string()
+        solution: z.string().optional()
       });
       
-      const { problem, solution } = schema.parse(req.body);
-      const result = await reverseEngineerThinking(problem, solution);
+      const { problemType, problem, solution } = schema.parse(req.body);
+      const result = await reverseEngineerThinking(problemType, problem, solution || "");
+      
+      // Save the activity for history tracking
+      // For demo purposes, use user 1
+      const userId = 1;
+      
+      await storage.createUserActivity({
+        userId,
+        activityType: "reverse_engineering",
+        title: `Reverse Engineered ${problemType}: ${problem.substring(0, 30)}...`,
+        description: problem,
+        score: null,
+        skillId: null,
+        exerciseId: null
+      });
       
       res.json(result);
     } catch (error) {
@@ -364,7 +393,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { problem, thinkingProcess, conclusion } = schema.parse(req.body);
       const result = await verifyThinkingProcess(problem, thinkingProcess, conclusion);
       
+      // Save the activity for history tracking
+      // For demo purposes, use user 1
+      const userId = 1;
+      
+      await storage.createUserActivity({
+        userId,
+        activityType: "thinking_verification",
+        title: `Verified Thinking: ${problem.substring(0, 30)}...`,
+        description: problem,
+        score: Math.round(result.confidence * 100),
+        skillId: null,
+        exerciseId: null
+      });
+      
       res.json(result);
+    } catch (error) {
+      res.status(400).json({ message: getErrorMessage(error) });
+    }
+  });
+
+  // Get thinking process history
+  apiRouter.get("/thinking-history", async (req, res) => {
+    try {
+      // For demo purposes, get history for user 1
+      const userId = 1;
+      const activityType = req.query.type as string;
+      
+      if (!activityType || !["thinking_evaluation", "reverse_engineering", "thinking_verification"].includes(activityType)) {
+        return res.status(400).json({ message: "Invalid activity type" });
+      }
+      
+      // Get the activities for the specific thinking process type
+      const activities = await storage.getUserActivities(userId);
+      const filteredActivities = activities
+        .filter(activity => activity.activityType === activityType)
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      
+      res.json(filteredActivities);
     } catch (error) {
       res.status(400).json({ message: getErrorMessage(error) });
     }

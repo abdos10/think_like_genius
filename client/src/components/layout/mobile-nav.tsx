@@ -7,7 +7,7 @@ export function MobileNav() {
   const navItems = [
     { href: "/", label: "Dashboard", icon: "ri-dashboard-line" },
     { href: "/training", label: "Training", icon: "ri-brain-line" },
-    { href: "/problem-solver", label: "Problems", icon: "ri-question-line" },
+    { href: "/thinking-process", label: "Thinking", icon: "ri-lightbulb-line" },
     { href: "/analytics", label: "Analytics", icon: "ri-bar-chart-line" },
   ];
 

@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 // Pages
 import Dashboard from "@/pages/dashboard";
 import Training from "@/pages/training";
-import ProblemSolver from "@/pages/problem-solver";
 import ThinkingProcess from "@/pages/thinking-process";
 import Analytics from "@/pages/analytics";
 import Achievements from "@/pages/achievements";
@@ -45,7 +44,6 @@ function App() {
             <Switch>
               <Route path="/" component={Dashboard} />
               <Route path="/training" component={Training} />
-              <Route path="/problem-solver" component={ProblemSolver} />
               <Route path="/thinking-process" component={ThinkingProcess} />
               <Route path="/analytics" component={Analytics} />
               <Route path="/achievements" component={Achievements} />

@@ -28,7 +28,7 @@ export function Header({ user, onToggleSidebar }: HeaderProps) {
       case "/achievements":
         return "Achievements";
       default:
-        return "ThinkTrainer";
+        return "Think like genius";
     }
   };
 

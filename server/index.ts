@@ -1,6 +1,16 @@
+// Load environment variables from .env file at the very beginning
+import 'dotenv/config';
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+
+// Log environment variables (masked for security)
+console.log("Environment:");
+console.log(`- NODE_ENV: ${process.env.NODE_ENV || 'development'}`);
+console.log(`- PORT: ${process.env.PORT}`);
+console.log(`- GEMINI_API_KEY: ${process.env.GEMINI_API_KEY ? process.env.GEMINI_API_KEY.substring(0, 5) + '...' + process.env.GEMINI_API_KEY.substring(process.env.GEMINI_API_KEY.length - 5) : 'not set'}`);
+console.log(`- OPENROUTER_API_KEY: ${process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.substring(0, 7) + '...' + process.env.OPENROUTER_API_KEY.substring(process.env.OPENROUTER_API_KEY.length - 7) : 'not set'}`);
 
 const app = express();
 app.use(express.json());
@@ -56,16 +66,14 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  // Use PORT from environment variables or default to 5000
+  const port = process.env.PORT ? parseInt(process.env.PORT) : 5000;
   server.listen({
     port,
     host: "localhost"
   }, () => {
     log(`Server running at http://localhost:${port}`);
-  }).on('error', (err) => {
+  }).on('error', (err: NodeJS.ErrnoException) => {
     if (err.code === 'EADDRINUSE') {
       log(`Port ${port} is already in use. Try a different port.`);
     } else {

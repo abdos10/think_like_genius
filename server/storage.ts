@@ -109,9 +109,9 @@ export class MemStorage implements IStorage {
     // Create default user
     const user: User = {
       id: this.currentUserId++,
-      username: 'alex',
+      username: 'Abdo',
       password: 'password',
-      displayName: 'Alex Morgan',
+      displayName: 'Sabbagh',
       level: 'Intermediate Thinker'
     };
     this.users.set(user.id, user);
@@ -416,6 +416,8 @@ export class MemStorage implements IStorage {
     const newUserSkill: UserSkill = { 
       ...userSkill, 
       id, 
+      progress: userSkill.progress ?? 0, 
+      level: userSkill.level ?? 'beginner', 
       lastUpdated: new Date()
     };
     this.userSkills.set(id, newUserSkill);
@@ -429,6 +431,8 @@ export class MemStorage implements IStorage {
     const updatedUserSkill: UserSkill = { 
       ...userSkill, 
       ...userSkillData,
+      progress: userSkillData.progress ?? userSkill.progress,
+      level: userSkillData.level ?? userSkill.level,
       lastUpdated: new Date()
     };
     this.userSkills.set(id, updatedUserSkill);
@@ -452,7 +456,11 @@ export class MemStorage implements IStorage {
 
   async createExercise(exercise: InsertExercise): Promise<Exercise> {
     const id = this.currentExerciseId++;
-    const newExercise: Exercise = { ...exercise, id };
+    const newExercise: Exercise = { 
+      ...exercise, 
+      id, 
+      difficulty: exercise.difficulty ?? 'medium' 
+    };
     this.exercises.set(id, newExercise);
     return newExercise;
   }
@@ -471,6 +479,9 @@ export class MemStorage implements IStorage {
     const newActivity: UserActivity = { 
       ...activity, 
       id, 
+      score: activity.score ?? null,
+      skillId: activity.skillId ?? null,
+      exerciseId: activity.exerciseId ?? null,
       createdAt: new Date() 
     };
     this.userActivities.set(id, newActivity);
